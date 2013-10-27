@@ -1,0 +1,19 @@
+doctype 5
+html
+    head
+        title= title
+
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/leaflet/leaflet.css')
+        //if lt IE 8
+            link(rel='stylesheet', href='/leaflet/leaflet-ie.css')
+
+        link(rel='stylesheet', href='/leaflet/cluster/MarkerCluster.css')
+        link(rel='stylesheet', href='/leaflet/cluster/MarkerCluster.Default.css')
+        //if lt IE 8
+              link(rel='stylesheet', href='/leaflet/cluster/MarkerCluster.Default.ie.css')
+    body
+        block content
+        script(type='text/javascript', src='/leaflet/leaflet.js')
+        script(type='text/javascript', src='/leaflet/cluster/leaflet.markercluster.js')
+        script(type='text/javascript', src='/javascripts/script.js')
