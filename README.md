@@ -24,4 +24,4 @@
 
 ## us
 
-Made by [Siegfried Ehret}(https://ehret.me) and [iamvdo](http://blog.iamvdo.me/)
+Made by [Siegfried Ehret](https://ehret.me) and [iamvdo](http://blog.iamvdo.me/)
