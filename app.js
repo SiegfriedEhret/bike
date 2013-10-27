@@ -31,9 +31,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+bike.initContracts();
+
 app.get('/', routes.index);
 app.get('/city/:city', bike.getCity);
-app.get('/contracts', bike.getContracts);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

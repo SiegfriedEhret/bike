@@ -29,5 +29,9 @@ if (mapContainer) {
 
 
 if (contractsData) {
-    console.log(contractsData);
+    for (var contractName in contractsData) {
+        if (contractsData.hasOwnProperty(contractName)) {
+
+        }
+    }
 }

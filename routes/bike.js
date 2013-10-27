@@ -24,17 +24,15 @@ exports.getCity = function (req, res) {
     });
 };
 
-exports.getContracts = function (req, res) {
+exports.initContracts = function (req, res) {
     var filePath = 'public/javascripts/contracts.js';
     var url = 'https://api.jcdecaux.com/vls/v1/contracts&apiKey=' + apiKey;
 
     fs.exists(filePath, function (exists) {
         if (exists) {
-            render(res, {
-                viewName: 'contracts'
-            });
+            console.log('Bike: contracts already initialized')
         } else {
-            getDataAndSaveFile(res, {
+            getDataAndSaveFile(undefined, {
                 viewName: 'contracts',
                 url: url,
                 filePath: filePath
@@ -45,7 +43,7 @@ exports.getContracts = function (req, res) {
 
 function getDataAndSaveFile(res, settings) {
     console.log(settings.url);
-    https.get(settings.url, function (response) {
+    https.get(settings.url,function (response) {
         var data = '';
         response.on('data', function (chunk) {
             data += chunk;
@@ -58,7 +56,9 @@ function getDataAndSaveFile(res, settings) {
                 }
                 console.log('It\'s saved!');
 
-                render(res, settings);
+                if (res) {
+                    render(res, settings);
+                }
             });
         });
 
@@ -70,7 +70,7 @@ function getDataAndSaveFile(res, settings) {
 function render(res, settings) {
     var options = { title: 'Bike' };
     if (settings.city) {
-      options.city = settings.city;
+        options.city = settings.city;
     }
     res.render(settings.viewName, options);
 }
