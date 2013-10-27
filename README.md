@@ -21,3 +21,7 @@
 
   0. You just DO WHAT THE FUCK YOU WANT TO.
 ```
+
+## us
+
+Made by [Siegfried Ehret}(https://ehret.me) and [iamvdo](http://blog.iamvdo.me/)
