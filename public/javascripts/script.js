@@ -29,9 +29,13 @@ if (mapContainer) {
 
 
 if (contractsData) {
+    var contractsContainer = document.getElementById('contracts');
     for (var contractName in contractsData) {
         if (contractsData.hasOwnProperty(contractName)) {
-
+            var contract = document.createElement('a');
+            contract.appendChild(document.createTextNode(contractName));
+            contract.setAttribute('href', contractName);
+            contractsContainer.appendChild(contract);
         }
     }
 }

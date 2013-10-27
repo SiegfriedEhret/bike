@@ -4,7 +4,7 @@ var apiKey = 'b5352ee57d9461bdb7cae30baee77fa02e4a225b';
 
 exports.getCity = function (req, res) {
     var city = req.params.city;
-    var filePath = 'public/javascripts/city-' + city.toLowerCase() + '.js';
+    var filePath = 'public/javascripts/cities/' + city.toLowerCase() + '.js';
     var url = 'https://api.jcdecaux.com/vls/v1/stations?contract=' + city + '&apiKey=' + apiKey;
 
     fs.exists(filePath, function (exists) {
@@ -24,7 +24,7 @@ exports.getCity = function (req, res) {
     });
 };
 
-exports.initContracts = function (req, res) {
+exports.initContracts = function () {
     var filePath = 'public/javascripts/contracts.js';
     var url = 'https://api.jcdecaux.com/vls/v1/contracts&apiKey=' + apiKey;
 

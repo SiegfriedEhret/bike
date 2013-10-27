@@ -4,8 +4,6 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var bike = require('./routes/bike');
 var http = require('http');
 var path = require('path');
@@ -33,9 +31,7 @@ if ('development' == app.get('env')) {
 
 bike.initContracts();
 
-app.get('/', routes.index);
-app.get('/city/:city', bike.getCity);
-app.get('/users', user.list);
+app.get('/:city', bike.getCity);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

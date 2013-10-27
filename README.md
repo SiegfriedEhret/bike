@@ -1,7 +1,7 @@
 ## requirements
 
 * [nodejs](http://nodejs.org/)
-* npm install express jade stylus
+* npm install express jade
 * run with `node app.js`
 
 ## license

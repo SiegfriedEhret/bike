@@ -1,10 +1,7 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{city}
-
+    #contracts
     #map
-
     script(src='/javascripts/contracts.js')
-    script(src='/javascripts/city-' + city.toLowerCase() + '.js')
+    script(src='/javascripts/cities/' + city.toLowerCase() + '.js')
