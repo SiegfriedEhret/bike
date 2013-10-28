@@ -89,6 +89,15 @@ a {
 .leaflet-popup-tip{
         background: #151515;
 }
+/* leaflet icon */
+.leaflet-marker-station{
+    background: url('../images/icons/icon-station.png');
+    border: none;
+}
+.leaflet-marker-me{
+    background: url('../images/icons/icon-me.png');
+    border: none;
+}
 /*
 h1 {
     background: linear-gradient(to bottom, #353535, #151513);
