@@ -4,6 +4,10 @@
 * npm install express jade
 * run with `node app.js`
 
+## remarks
+
+* Flags from [famfamfam](http://famfamfam.com/lab/icons/flags/).
+
 ## license
 
 ```
