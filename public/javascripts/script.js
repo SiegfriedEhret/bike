@@ -1,6 +1,7 @@
 (function () {
 
     var map = undefined;
+    var me = undefined;
     var latLng = [48.85623, 2.35083];
     var zoom = 17;
 
@@ -91,9 +92,14 @@
             weight: 1
         };
 
-        L.marker(latLng, iconMe).addTo(map).bindPopup('Vous êtes là! (env. ' + radius + 'm)');
-        L.circle(latLng, radius, iconMeAround).addTo(map);
-        map.setView(latLng, zoom);
+        if (!me) {
+            me = L.marker(latLng, iconMe).addTo(map).bindPopup('Vous êtes là! (env. ' + radius + 'm)');
+            L.circle(latLng, radius, iconMeAround).addTo(map);
+            map.setView(latLng, zoom);
+        } else {
+            me.setLatLng(latLng).bindPopup('Vous êtes là! (env. ' + radius + 'm)');
+            map.setView(latLng, zoom);
+        }
     }
 
     function updateMarkers(data) {
