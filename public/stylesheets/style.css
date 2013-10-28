@@ -3,11 +3,9 @@
     font-family: 'Vampiro One';
     font-style: normal;
     font-weight: 400;
-    src: local('Vampiro One'),
-         local('VampiroOne-Regular'),
-         url(../fonts/VampiroOne-Regular.woff) format('woff'),
-         url(../fonts/VampiroOne-Regular.ttf) format('truetype');
+    src: local('Vampiro One'), local('VampiroOne-Regular'), url(../fonts/VampiroOne-Regular.woff) format('woff'), url(../fonts/VampiroOne-Regular.ttf) format('truetype');
 }
+
 html,
 body {
     height: 100%;
@@ -21,39 +19,45 @@ a {
     color: #00b7ff;
 }
 
-.header{
+.header {
     position: absolute;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     z-index: 10;
     height: 5rem;
     color: #fff;
     background: linear-gradient(#363636, #151515);
-    box-shadow: 0 2px 2px rgba(0,0,0,.4);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
 }
-.header h1{
+
+.header h1 {
     float: left;
     font: 3.2em 'Vampiro One', sans-serif;
     line-height: 4.7rem;
     color: #de422a;
     padding-left: .5em;
     margin: 0;
-    text-shadow: 0 2px 5px rgba(0,0,0,.75);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .75);
 }
-.header h1 span{
+
+.header h1 span {
     color: #2bc6dd;
 }
-.menu{
+
+.menu {
     margin: 0;
     padding: 0;
     float: right;
 }
-.icons{
+
+.icons {
     text-align: center;
 }
-.icon-bike{
+
+.icon-bike {
     display: inline-block;
     -moz-box-sizing: content-box;
-         box-sizing: content-box;
+    box-sizing: content-box;
     vertical-align: middle;
     width: 5rem;
     height: 5rem;
@@ -67,82 +71,140 @@ a {
     border-radius: 0;
     cursor: pointer;
 }
-.icon-bike-popup{
+
+.icon-bike-popup {
     font-size: 3em;
 }
-.icon-bike--add{
+
+#icon-bike-plus,
+.icon-bike-add {
     background: #2bc6dd;
     color: #222;
 }
-.icon-bike--remove{
+
+#icon-bike-minus,
+.icon-bike-remove {
     border: .4rem solid #2bc6dd;
     width: 4.2rem;
     height: 4.2rem;
     line-height: 4.2rem;
 }
-.leaflet-popup-content-wrapper{
-        background: linear-gradient(#363636, #151515);
-        color: #fff;
-        border-radius: 2px;
-        box-shadow: 0 2px 2px rgba(0,0,0,.4);
+
+.leaflet-popup-content-wrapper {
+    background: linear-gradient(#363636, #151515);
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
 }
-.leaflet-popup-tip{
-        background: #151515;
+
+.leaflet-popup-tip {
+    background: #151515;
 }
+
 /* leaflet icon */
-.leaflet-marker-station{
+.leaflet-marker-station {
     background: url('../images/icons/icon-station.png');
     border: none;
 }
-.leaflet-marker-me{
+
+.leaflet-marker-me {
     background: url('../images/icons/icon-me.png');
     border: none;
 }
-/*
-h1 {
-    background: linear-gradient(to bottom, #353535, #151513);
-    color: #da3e2f;
-    font-size: 2em;
-    font-style: italic;
-    margin: 0;
-    padding: .2em;
-    text-align: center;
-    width: 100%;
-}
 
-h1::after {
-    content: ' \D83D\DEB2';
-    color: #39c7db;
-    font-style: normal;
-}
-*/
 #main {
     position: absolute;
-    top: 5rem; bottom: 0; left: 0; right: 0;
+    top: 5rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     background: deepskyblue;
     padding: 0;
 }
+
 #map {
     width: 100%;
     height: 100%;
 }
+
 #map img {
     max-width: none;
 }
 
-#actions {
-    bottom: 0;
-    position: fixed;
+#contracts-button {
+    background-color: transparent;
+    border: 1px solid #5c5c5c;
+    border-radius: 5px;
+    color: #2bc6dd;
+    font: 2em 'Vampiro One', sans-serif;
+}
+
+#contracts {
+    display: block;
+    height: 500px;
+    position: absolute;
+    margin: 5rem 100% 0 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    right: 0;
+    width: 300px;
+    z-index: 10;
+}
+
+#contracts.enabled {
+    margin-right: 0;
+}
+
+
+#contracts a {
+    background: #363636 no-repeat 5px 50%;
+    border-bottom: 1px solid #222;
+    display: block;
+    float: left;
+    font-size: 1.5rem;
+    height: 40px;
+    padding-left: 20px;
+    text-align: center;
     width: 100%;
 }
 
-#actions > button {
-    height: 40px;
-    width: 25%;
+#contracts .country-be {
+    background-image: url('../images/countries/be.gif');
 }
 
-#my-position::after{
-    content: '\2316';
-    font-size: 2em;
+#contracts .country-es {
+    background-image: url('../images/countries/es.gif');
+}
+
+#contracts .country-fr {
+    background-image: url('../images/countries/fr.gif');
+}
+
+#contracts .country-jp {
+    background-image: url('../images/countries/jp.gif');
+}
+
+#contracts .country-lt {
+    background-image: url('../images/countries/lt.gif');
+}
+
+#contracts .country-lu {
+    background-image: url('../images/countries/lu.gif');
+}
+
+#contracts .country-no {
+    background-image: url('../images/countries/no.gif');
+}
+
+#contracts .country-ru {
+    background-image: url('../images/countries/ru.gif');
+}
+
+#contracts .country-se {
+    background-image: url('../images/countries/se.gif');
+}
+
+#contracts .country-si {
+    background-image: url('../images/countries/si.gif');
 }

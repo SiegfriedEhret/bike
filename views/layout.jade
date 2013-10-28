@@ -18,8 +18,10 @@ html
             h1 #{title}
                 span . 
             menu.menu(type="toolbar")
-                button.icon-bike.icon-bike--add +
-                button.icon-bike.icon-bike--remove &minus;
+                button#contracts-button Choose a city
+                button#icon-bike-my-position.icon-bike &#8982;
+                button#icon-bike-plus.icon-bike +
+                button#icon-bike-minus.icon-bike &minus;
         block content
         script(type='text/javascript', src='/javascripts/hand.minified-1.1.2.js')
         script(type='text/javascript', src='/leaflet/leaflet.js')
