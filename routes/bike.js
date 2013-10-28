@@ -75,7 +75,7 @@ function getDataAndSaveFile(res, settings) {
 }
 
 function render(res, settings) {
-    var options = { title: 'Bike' };
+    var options = { title: 'bike' };
     if (settings.city) {
         options.city = settings.city;
     }
