@@ -1,3 +1,6 @@
+// TODO localstorage
+// TODO manifest cache and stuff...
+
 (function () {
 
     var map = undefined;

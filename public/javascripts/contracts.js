@@ -1,3 +1,5 @@
+// TODO center & zoom for each city
+
 var contractsData = {
     'Bruxelles-Capitale': {
         country: 'be'
