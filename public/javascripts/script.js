@@ -8,7 +8,7 @@
     initEvents();
 
     initMap(latLng, zoom);
-    updateMapView(latLng, zoom);
+    updateMapView(latLng, 0, zoom); // accuracy set to 0
     updateMarkers(mapData);
 
     function initEvents() {
@@ -21,7 +21,8 @@
         }
 
         function success(position) {
-            updateMapView([position.coords.latitude, position.coords.longitude], zoom);
+            console.log(position);
+            updateMapView([position.coords.latitude, position.coords.longitude], position.coords.accuracy, zoom);
         }
 
         function error() {
@@ -61,7 +62,26 @@
         }).addTo(map);
     }
 
-    function updateMapView(latLng, zoom) {
+    function updateMapView(latLng, accuracy, zoom) {
+
+        var radius = accuracy / 2;
+
+        // icons, Me and around (accuracy)
+        var iconMe = {
+            icon: L.divIcon({
+                iconSize: [14,14],
+                popupAnchor: [0,-5],
+                className: 'leaflet-marker-me'
+            })
+        };
+        var iconMeAround = {
+            stroke: false,
+                fillColor: '#2BC6DD',
+                weight: 1
+        };
+
+        L.marker(latLng, iconMe).addTo(map).bindPopup('Vous êtes là! (env. ' + radius + 'm)');
+        L.circle(latLng, radius, iconMeAround).addTo(map);
         map.setView(latLng, zoom);
     }
 
