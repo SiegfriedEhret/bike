@@ -13,7 +13,12 @@ html
         //if lt IE 8
               link(rel='stylesheet', href='/leaflet/cluster/MarkerCluster.Default.ie.css')
     body
-        h1 #{title}
+        header.header
+            h1 #{title}
+                span . 
+            menu.menu(type="toolbar")
+                button.icon-bike.icon-bike--add +
+                button.icon-bike.icon-bike--remove &minus;
         block content
         script(type='text/javascript', src='/javascripts/hand.minified-1.1.2.js')
         script(type='text/javascript', src='/leaflet/leaflet.js')
