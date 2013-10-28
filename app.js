@@ -31,6 +31,7 @@ if ('development' == app.get('env')) {
 
 bike.initContracts();
 
+app.get('/', bike.getHome);
 app.get('/:city', bike.getCity);
 
 http.createServer(app).listen(app.get('port'), function(){

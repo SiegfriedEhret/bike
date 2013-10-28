@@ -33,3 +33,19 @@ h1::after {
 #map {
     height: 480px;
 }
+
+#actions {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+#actions > button {
+    height: 40px;
+    width: 25%;
+}
+
+#my-position::after{
+    content: '\2316';
+    font-size: 2em;
+}

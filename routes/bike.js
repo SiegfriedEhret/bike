@@ -2,6 +2,13 @@ var fs = require('fs');
 var https = require('https');
 var apiKey = 'b5352ee57d9461bdb7cae30baee77fa02e4a225b';
 
+exports.getHome = function (req, res) {
+    render(res, {
+        viewName: 'map',
+        city: 'Paris'
+    });
+}
+
 exports.getCity = function (req, res) {
     var city = req.params.city;
     var filePath = 'public/javascripts/cities/' + city.toLowerCase() + '.js';
