@@ -107,15 +107,41 @@
 
     function updateMarkers(data) {
         if (data) {
-            var markers = new L.MarkerClusterGroup();
+
+            function createIconForMarkerClusterGroup (cluster) {
+                var childCount = cluster.getChildCount();
+
+                var c = ' marker-cluster-';
+                if (childCount < 10) {
+                        c += 'small';
+                } else if (childCount < 100) {
+                        c += 'medium';
+                } else {
+                        c += 'large';
+                }
+
+                return new L.DivIcon({ 
+                    html: '<div class="leaflet-marker-station"></div><div class="leaflet-marker-station-cluster">' + childCount + '</div>',
+                    className: 'leaflet-marker-station marker-cluster' + c,
+                    iconSize: [22, 22],
+                    popupAnchor: [0, -5]
+                });
+        
+            }
+            var markers = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                maxClusterRadius: 50,
+                iconCreateFunction: createIconForMarkerClusterGroup
+            });
             var markersList = [];
 
             // icon for markers (maybe not here)
             var iconMarker = {
                 icon: L.divIcon({
+                    html: '<div class="leaflet-marker-station"></div>',
                     iconSize: [22, 22],
                     popupAnchor: [0, -5],
-                    className: 'leaflet-marker-station'
+                    className: ''
                 })
             };
 
